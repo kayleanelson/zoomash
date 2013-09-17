@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/style.css" />
  
- 
+ <!-- Comment goes here -->
  
 <title>Zoo Mash</title>
 
