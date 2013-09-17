@@ -1,0 +1,37 @@
+html{
+	background: url("http://www.snapshotserengeti.org/images/big-wood.jpg") fixed center top;
+
+}
+
+body{
+	font-family:"Open Sans", sans-serif;
+	color:white;
+}
+
+header, section{
+	margin: 0 auto;
+	width:800px;
+	text-align: center;
+
+}
+
+section#comparison{
+	width:1120px;
+}
+
+section#comparison div.image{
+	float:left;
+}
+
+section#comparison div.image:first-child{
+	margin-right:100px;
+}
+
+section#comparison div.image img{
+	width:500px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: white 2px solid;
+
+}
