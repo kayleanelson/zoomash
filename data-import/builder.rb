@@ -1,7 +1,5 @@
 require 'mongo'
 include Mongo
-require 'bson'
-
 
 @starting_rank = 1600
 
