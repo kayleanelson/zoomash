@@ -23,30 +23,12 @@ app.get('/subjects', (req, res) ->
 
 app.post("/classification", (req, res) ->
   classification = req.body
-  
-  Subject.find({_id: classification.id}).execFind( (err, subject) ->
-    subject.rank = classification.rank
-    Subject.update({_id: classification.id}, {rank: classification.rank})
+  Subject.update({_id: classification.id}, {rank: classification.rank}, (err, subject) ->
+    console.log "SUBJECT", subject
   )
   
   res.json(true)
 )
-
-# app.post('/classification', function(req, res) {
-#   if(!req.body.hasOwnProperty('author') || 
-#      !req.body.hasOwnProperty('text')) {
-#     res.statusCode = 400;
-#     return res.send('Error 400: Post syntax incorrect.');
-#   }
-# 
-#   var newQuote = {
-#     author : req.body.author,
-#     text : req.body.text
-#   };
-# 
-#   quotes.push(newQuote);
-#   res.json(true);
-# });
 
 app.use( express.static(__dirname) )
 app.listen(process.env.PORT || 8000)
