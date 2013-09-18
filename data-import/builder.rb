@@ -3,7 +3,8 @@ include Mongo
 
 @starting_rank = 1600
 
-subjects = File.read("subjects.txt").split("\n")
+subjects = File.read("../urls/serengeti_urls.csv").split("\n")
+puts subjects
 
 mongo_client = MongoClient.new("localhost", 27017)
 db = mongo_client.db("zoomash")

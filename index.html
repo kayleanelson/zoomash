@@ -6,9 +6,10 @@
 
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800;Rambla:400,700italic' rel='stylesheet' type='text/css'>
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
- 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <title>Top Shots</title>
+
 
 </head>
 <body>
@@ -26,23 +27,52 @@
 
 </header>
 
+<section id="intro">
+
+<p>The Zooniverse team wants to know what you think are the most interesting, striking and beautiful photos in Snapshot Serengeti.</p>
+
+</section>
+
+<div id="test">
+
+</div>
+
 <section id="instructions">
 	
+ <p>Click on which photo you like more!</p>
 
- <p>Click on which photo you think is more beautiful!</p>
+
 </section>
 
 <section id="comparison">
 <div class="image">
-	<img src="http://www.snapshotserengeti.org/images/tutorial-subject/PICT0501.JPG" />
+	<img class="hoverimage" src="images/thumbs_up.png" alt="" />
+	<img class="subject" id="subject1" src="" />
 </div>
 
 <div class="image">
-	<img src="http://www.snapshotserengeti.org/images/tutorial-subject/PICT0501.JPG" />
+	<img class="hoverimage" src="images/thumbs_up.png" alt="" />
+	<img class="subject" id="subject2" src="" />
 </div>
 
 </section>
 
+<script src="mash.js"></script>
+
+<script>
+
+	$.getJSON( "subjects")
+ 	.done(function(data) {
+ 			image1 = data[0];
+     		$("#subject1").attr("src", image1.location);
+
+     		$.getJSON("subjects").done(function(data2) {
+     			image2 = data2[0];
+     			$("#subject2").attr("src", image2.location);
+     		});
+ 	});
+
+</script>
 
 
 </body>
