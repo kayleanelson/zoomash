@@ -96,8 +96,6 @@ section#comparison div.image:first-child{
 
 section#comparison div.image:hover{
 	cursor: pointer;
-	#opacity:0.6;
-	#filter:alpha(opacity=60); /* For IE8 and earlier */
 }
 
 .hoverimage { 
@@ -121,24 +119,19 @@ section#comparison div.image img.subject{
 
 /*top ten*/
 section#gallery{
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
-section#gallery div.image{
+section#gallery img{
 	float:left;
-	margin-bottom:50px;
-}
-
-section#gallery div.image:nth-child(odd){
-	margin-right:100px;
-}
-
-section#gallery div.image img{
-	width:500px;
+	margin:25px;
+	width:320px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	border: white 6px solid;
 }
+
+
 
 
