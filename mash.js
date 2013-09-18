@@ -2,8 +2,6 @@ $("div.image").click(function(){
 
 	winner_id = $(this).find("img.subject").attr("id");
 
-	console.log(winner_id);
-
 	if (winner_id == "subject1") {
 		var winner = image1;
 		var loser = image2;
@@ -27,10 +25,21 @@ $("div.image").click(function(){
 	rank_loser = rank_loser - kvalue * win_prob_loser;
 	rank_winner = rank_winner + kvalue*(1.0-win_prob_winner);
 
-	console.log(rank_winner);
-	console.log(rank_loser);
+	winner_outgoing = {
+		id: winner._id,
+		rank: rank_winner
+	};
 
-	//location.reload();
+	loser_outgoing = {
+		id: loser._id,
+		rank: rank_loser
+	};
+
+	$.post("classification", winner_outgoing);
+	$.post("classification", loser_outgoing);
+
+
+	location.reload();
 
 });
 
