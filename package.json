@@ -3,7 +3,7 @@
   "description": "zoomash",
   "version": "0.0.1",
   "scripts": {
-    "start": "cake server"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "*",
