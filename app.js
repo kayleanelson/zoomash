@@ -33,6 +33,12 @@
     });
   });
 
+  app.get('/topshots', function(req, res) {
+    return Subject.find().sort({"rank":-1}).limit(9).execFind(function(err, subject) {
+      return res.json(subject);
+    });
+  });
+
   app.post("/classification", function(req, res) {
     var classification;
     classification = req.body;
